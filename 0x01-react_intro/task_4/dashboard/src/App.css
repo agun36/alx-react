@@ -9,6 +9,12 @@
   align-items: center;
   border-bottom: 2px red solid;
 }
+@media screen and (max-width: 800px) {
+  .App-header{
+    flex-direction: column;
+  }
+  
+}
 .App-header h1{
   color: red;
 }
