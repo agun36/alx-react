@@ -18,9 +18,16 @@
   flex: 1 1 auto;
   margin: 3rem;
 }
+
 .App-body form{
   display: flex;
   column-gap: 20px;
+}
+@media screen and (max-width: 600px) {
+  .App-body form{
+    flex-direction: column;
+  }
+  
 }
 .App-footer{
   border-top: 2px red solid;
