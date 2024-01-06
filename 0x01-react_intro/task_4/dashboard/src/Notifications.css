@@ -2,6 +2,7 @@
     border: 1px dashed red;
     padding: 10px;
     margin: 10px;
+    position: relative;
 }
 .Notifications ul li:first-child{
     color: blue
