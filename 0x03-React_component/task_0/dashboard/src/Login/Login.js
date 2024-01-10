@@ -12,7 +12,7 @@ const Login = ({onSuccessfulLogin}) => {
         }
     }
     return (
-        <form name='login' role='form' onSubmit={handleSubmit}>
+        <form name='login'  onSubmit={handleSubmit}>
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
           <label htmlFor="password">Password:</label>
