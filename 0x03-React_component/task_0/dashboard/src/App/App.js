@@ -16,9 +16,6 @@ function App(isLoggedIn) {
       </div>
       <main className="App-body">
         <section className="App-body__Section">
-        <p>
-          Login to access the full dashboard
-        </p>
         {isLoggedIn ? <CourseListRow /> : <Login/>}
         </section> 
       </main>

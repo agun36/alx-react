@@ -12,6 +12,6 @@ describe("Footer test", () => {
 
         it("should render the text Copyright", () => {
             render(<Footer />);
-            expect(getByText(`Copyright ${getFullYear()} - ${getFooterCopy()}`)).toBeInTheDocument();
+            expect(screen.getByText(`Copyright ${getFullYear()} - ${getFooterCopy()}`)).toBeInTheDocument();
         });
-    });
+});

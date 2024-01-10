@@ -20,14 +20,12 @@ test('Notifications renders three list items', () => {
 
 test('Notifications renders the text Here is the list of notifications', () => {
     const listNotifications = [
-    {id:1, type:"default", value: "New course available", html: null},
-    {id:2, type:"urgent", value: "New resume available", html: null},
-    {id:3, type:"urgent", value: null, html: getLatestNotification()},
+    {id:1, type:"urgent", html: getLatestNotification()},
     ]
     render(<Notifications displayDrawer={true} listNotifications={listNotifications}/>);
     expect(screen.getByText(/Here is the list of notifications/)).toBeInTheDocument();
 });
 test('getFullYear returns correct year', () => {
-    render(<Notifications />);
+    render(<Notifications  displayDrawer={true} />);
     expect(getFullYear()).toBe(new Date().getFullYear());
 });
