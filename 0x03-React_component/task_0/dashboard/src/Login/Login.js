@@ -7,7 +7,9 @@ const Login = ({onSuccessfulLogin}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(email, password);
-        onSuccessfulLogin();
+        if (typeof onSuccessfulLogin === 'function') {
+            onSuccessfulLogin();
+        }
     }
     return (
         <form name='login' role='form' onSubmit={handleSubmit}>

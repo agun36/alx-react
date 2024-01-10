@@ -10,8 +10,11 @@ import CourseListRow from '../CourseList/CourseList'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // You can initialize state here if needed
-    // this.state = {};
+    this.onSuccessfulLogin = this.onSuccessfulLogin.bind(this);
+  }
+
+  onSuccessfulLogin() {
+    this.props.onLogin();
   }
 
   render() {
