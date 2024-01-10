@@ -22,4 +22,5 @@ describe('NotificationItem', () => {
         const { getByText } = render(<NotificationItem type={type} value={value} html={html} />);
         expect(getByText('test')).toBeInTheDocument();
     });
+    
 });
