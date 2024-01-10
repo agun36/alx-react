@@ -8,6 +8,12 @@ import PropTypes from 'prop-types';
 import CourseListRow from '../CourseList/CourseList'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    // You can initialize state here if needed
+    // this.state = {};
+  }
+
   render() {
     return (
       <div className="App">
