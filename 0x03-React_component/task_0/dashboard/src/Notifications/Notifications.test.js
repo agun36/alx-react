@@ -1,6 +1,6 @@
 import React from 'react';
 import Notifications from './Notifications';
-import { getFullYear } from '../Utils/utils';
+import { getFullYear, getLatestNotification } from '../Utils/utils';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -22,7 +22,7 @@ test('Notifications renders the text Here is the list of notifications', () => {
     const listNotifications = [
     {id:1, type:"default", value: "New course available", html: null},
     {id:2, type:"urgent", value: "New resume available", html: null},
-    {id:3, type:"urgent", value: "New resume available", html: null},
+    {id:3, type:"urgent", value: null, html: getLatestNotification()},
     ]
     render(<Notifications displayDrawer={true} listNotifications={listNotifications}/>);
     expect(screen.getByText(/Here is the list of notifications/)).toBeInTheDocument();

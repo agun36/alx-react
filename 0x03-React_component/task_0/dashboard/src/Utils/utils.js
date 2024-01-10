@@ -15,4 +15,3 @@ const getLatestNotification = () => {
     return "<strong>Urgent requirement</strong> - complete by EOD";
 }
 export { getFooterCopy, getFullYear, getLatestNotification };
-
