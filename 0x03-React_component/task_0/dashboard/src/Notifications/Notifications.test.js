@@ -9,13 +9,23 @@ test('Notifications renders without crashing', () => {
 });
 
 test('Notifications renders three list items', () => {
-    render(<Notifications />);
+    const listNotifications = [
+    {id:1, type:"default", value: "New course available", html: null},
+    {id:2, type:"urgent", value: "New resume available", html: null},
+    {id:3, type:"urgent", value: "New resume available", html: null},
+    ]
+    render(<Notifications displayDrawer={true} listNotifications={listNotifications}/>);
     expect(screen.getAllByRole('listitem')).toHaveLength(3);
 });
 
 test('Notifications renders the text Here is the list of notifications', () => {
-    render(<Notifications />);
-    expect(screen.getByText('Here is the list of notifications')).toBeInTheDocument();
+    const listNotifications = [
+    {id:1, type:"default", value: "New course available", html: null},
+    {id:2, type:"urgent", value: "New resume available", html: null},
+    {id:3, type:"urgent", value: "New resume available", html: null},
+    ]
+    render(<Notifications displayDrawer={true} listNotifications={listNotifications}/>);
+    expect(screen.getByText(/Here is the list of notifications/)).toBeInTheDocument();
 });
 test('getFullYear returns correct year', () => {
     render(<Notifications />);

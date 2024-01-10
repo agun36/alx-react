@@ -10,13 +10,14 @@ import Notifications from "../Notifications/Notifications";
 
 describe("App tests", () => {
   it("renders without crashing", () => {
-    render(<App />);
+    render(<App  isLoggedIn={true}/>);
     expect(screen.getByRole('main')).toBeInTheDocument();
+    // expect(screen.getByText('Here is the list of notifications')).toBeInTheDocument();
   });
 
 
   it("should render Notifications component", () => {
-    render(<Notifications />);
+    render(<Notifications  displayDrawer={true} listNotifications={[{type: "default", value: "dummy notification"}]} />);
     expect(screen.getByText('Here is the list of notifications')).toBeInTheDocument();
   });
 

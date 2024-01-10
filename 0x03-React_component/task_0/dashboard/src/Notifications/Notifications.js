@@ -15,11 +15,11 @@ function Notifications({ displayDrawer, listNotifications }) {
       </div>
       {displayDrawer ? (
       <div className="Notifications">
-        {listNotifications.length != 0 ? <p>Here is the list of notifications</p> : null}
+        {listNotifications.length !== 0 ? <p>Here is the list of notifications</p> : null}
         <ul >
         {listNotifications.length === 0 ? <NotificationItem type="default" value="No new notification for now" /> : null}
             {listNotifications.map((val, idx) => {
-              return <NotificationItem type={val.type} value={val.value} html={val.html} key={val.id} />;
+              return <NotificationItem type={val.type} value={val.value} html={val.html} key={idx} />;
             })}
         </ul>
         <button aria-label='Close' style={{ position: 'absolute', top: '10px', right: '5px', border: 'none', background: 'none' }}><img src={closeIcon} alt="close icon" /></button>

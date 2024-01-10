@@ -4,17 +4,11 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
 import Notifications from '../Notifications/Notifications';
-
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import CourseListRow from '../CourseList/CourseList'
 
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-
-
-
+function App(isLoggedIn) {
   return (
     <div className="App">
       <div className="App__header_notifications">
@@ -28,12 +22,20 @@ function App() {
         <p>
           Login to access the full dashboard
         </p>
-        {isLoggedIn ? <CourseListRow /> : <Login onSuccessfulLogin={() => setIsLoggedIn(true)} />}
+        {isLoggedIn ? <CourseListRow /> : <Login/>}
         </section> 
       </main>
       <Footer/>
     </div>
   );
 }
+
+App.defaultProps = {
+  isLoggedIn: false,
+};
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool,
+};
 
 export default App;
