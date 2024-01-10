@@ -12,9 +12,6 @@
   border-bottom: 2px red solid;
   
 }
-
-
-
 .App-body{
   display: flex;
   flex-direction: column;

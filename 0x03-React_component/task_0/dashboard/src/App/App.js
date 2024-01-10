@@ -7,15 +7,12 @@ import Notifications from '../Notifications/Notifications';
 import PropTypes from 'prop-types';
 import CourseListRow from '../CourseList/CourseList'
 
-
 function App(isLoggedIn) {
   return (
     <div className="App">
       <div className="App__header_notifications">
       <Header/>
-      
-      <Notifications/>
-      
+      <Notifications/>     
       </div>
       <main className="App-body">
         <section className="App-body__Section">

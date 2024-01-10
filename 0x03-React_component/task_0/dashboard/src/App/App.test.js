@@ -12,7 +12,6 @@ describe("App tests", () => {
   it("renders without crashing", () => {
     render(<App  isLoggedIn={true}/>);
     expect(screen.getByRole('main')).toBeInTheDocument();
-    // expect(screen.getByText('Here is the list of notifications')).toBeInTheDocument();
   });
 
 
