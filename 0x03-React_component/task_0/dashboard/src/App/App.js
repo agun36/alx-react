@@ -10,13 +10,15 @@ import CourseListRow from '../CourseList/CourseList'
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { isLoggedIn: false };
     this.onSuccessfulLogin = this.onSuccessfulLogin.bind(this);
   }
 
-  onSuccessfulLogin() {
-    this.props.onLogin();
-  }
+  
 
+  onSuccessfulLogin() {
+    this.setState({ isLoggedIn: true });
+  }
   render() {
     return (
       <div className="App">
@@ -26,7 +28,7 @@ class App extends React.Component {
         </div>
         <main className="App-body">
           <section className="App-body__Section">
-            {this.props.isLoggedIn ? <CourseListRow /> : <Login/>}
+            {this.state.isLoggedIn ? <CourseListRow /> : <Login onSuccessfulLogin={this.onSuccessfulLogin}/>}
           </section> 
         </main>
         <Footer/>
@@ -36,7 +38,7 @@ class App extends React.Component {
 }
 
 App.defaultProps = {
-  isLoggedIn: false,
+  isLoggedIn: true,
 };
 
 App.propTypes = {
