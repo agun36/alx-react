@@ -7,21 +7,23 @@ import Notifications from '../Notifications/Notifications';
 import PropTypes from 'prop-types';
 import CourseListRow from '../CourseList/CourseList'
 
-function App(isLoggedIn) {
-  return (
-    <div className="App">
-      <div className="App__header_notifications">
-      <Header/>
-      <Notifications/>     
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App__header_notifications">
+          <Header/>
+          <Notifications/>     
+        </div>
+        <main className="App-body">
+          <section className="App-body__Section">
+            {this.props.isLoggedIn ? <CourseListRow /> : <Login/>}
+          </section> 
+        </main>
+        <Footer/>
       </div>
-      <main className="App-body">
-        <section className="App-body__Section">
-        {isLoggedIn ? <CourseListRow /> : <Login/>}
-        </section> 
-      </main>
-      <Footer/>
-    </div>
-  );
+    );
+  }
 }
 
 App.defaultProps = {
