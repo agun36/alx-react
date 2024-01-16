@@ -6,8 +6,8 @@ import CourseList from "../CourseList/CourseList";
 import Notifications from "../Notifications/Notifications";
 import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 import BodySection from "../BodySection/BodySection";
-import "./App.css";
 import PropTypes from "prop-types";
+import '../App/App.css';
 import { getLatestNotification } from "../utils/utils";
 
 class App extends React.Component {
@@ -45,6 +45,7 @@ class App extends React.Component {
   }
 
   render() {
+   
     return (
       <React.Fragment>
         <div className="App">
@@ -73,15 +74,6 @@ class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  App: {
-    height: "100vh",
-    maxWidth: "100vw",
-    position: "relative",
-    fontFamily: "Arial, Helvetica, sans-serif",
-  },
-});
 
 App.defaultProps = {
   isLoggedIn: false,
