@@ -74,6 +74,15 @@ class App extends React.Component {
   }
 }
 
+const styles = StyleSheet.create({
+  App: {
+    height: "100vh",
+    maxWidth: "100vw",
+    position: "relative",
+    fontFamily: "Arial, Helvetica, sans-serif",
+  },
+});
+
 App.defaultProps = {
   isLoggedIn: false,
   logOut: () => {
