@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Notifications.css";
-import closeBtn from "../assets/close-btn.png";
+import { StyleSheet, css } from "aphrodite";
+import closeIcon from "../assets/close-icon.png";
 import NotificationItem from "./NotificationItem";
 import PropTypes from "prop-types";
 import NotificationItemShape from "./NotificationItemShape";
@@ -23,11 +23,11 @@ class Notifications extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="menuItem">
+        <div className={css(styles.menuItem)}>
           <p>Your notifications</p>
         </div>
         {this.props.displayDrawer ? (
-          <div className="Notifications">
+          <div className={css(styles.Notifications)}>
             <button
               style={{
                 color: "#3a3a3a",
@@ -46,11 +46,11 @@ class Notifications extends Component {
                 console.log("Close button has been clicked");
               }}
             >
-              <img src={closeBtn} alt="X" width="10px" />
+              <img src={closeIcon} alt="close icon" width="10px" />
             </button>
-            {this.props.listNotifications.length !== 0 ? <p>Here is the list of notifications</p> : null}
+            {this.props.listNotifications.length != 0 ? <p>Here is the list of notifications</p> : null}
             <ul>
-              {this.props.listNotifications.length === 0 ? <NotificationItem type="default" value="No new notification for now" /> : null}
+              {this.props.listNotifications.length == 0 ? <NotificationItem type="default" value="No new notification for now" /> : null}
               {this.props.listNotifications.map((val, idx) => {
                 return <NotificationItem type={val.type} value={val.value} html={val.html} key={val.id} markAsRead={this.markAsRead} id={val.id} />;
               })}
@@ -61,6 +61,37 @@ class Notifications extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  Notifications: {
+    padding: "1em",
+    border: "2px dashed red",
+    position: "absolute",
+    top: "1.8em",
+    right: "0",
+  },
+
+  "notification-header": {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+
+  menuItem: {
+    textAlign: "right",
+  },
+
+  '[data-notification-type="default"]': {
+    color: "blue",
+  },
+
+  "[data-urgent]": {
+    color: "red",
+  },
+
+  '[data-notification-type="urgent"]': {
+    color: "red",
+  },
+});
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
