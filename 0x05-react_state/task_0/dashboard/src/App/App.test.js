@@ -70,7 +70,7 @@ describe("When ctrl + h is pressed", () => {
     wrapper.unmount();
   });
 
-  document.alert = jest.fn();
+  window.alert = jest.fn();
   it("checks that alert function is called", () => {
     const wrapper = mount(<App />);
     const spy = jest.spyOn(window, "alert");
@@ -92,7 +92,7 @@ describe("When ctrl + h is pressed", () => {
     jest.restoreAllMocks();
     wrapper.unmount();
   });
-  document.alert.mockClear();
+  window.alert.mockClear();
 });
 
 it("Has default state for displayDrawer false", () => {
